@@ -6,11 +6,11 @@ Vagrant.configure("2") do |config|
         web.vm.network "forwarded_port", guest: 80, host: 1235
         web.vm.hostname = "miage-web"
         web.vm.network "private_network", ip: "192.168.33.10"
-        
+
         # Provider virtualBox
         web.vm.provider "virtualbox" do |v|
             v.gui = false
-          end
+        end
 
         # Enable provisioning with a shell script
         web.vm.provision "shell", inline: <<-SHELL
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
         # Provider virtualBox
         app.vm.provider "virtualbox" do |v|
             v.gui = false
-          end
+        end
       
         # Enable provisioning with a shell script
         app.vm.provision "shell", inline: <<-SHELL
